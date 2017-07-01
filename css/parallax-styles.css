@@ -8,8 +8,8 @@ body {
 
 img {
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
   display: block;
   border: 2px solid black;
   box-shadow: 11px 9px 41px 0px rgba(0,0,0,0.75);
@@ -63,8 +63,8 @@ input[type=checkbox]:checked + label:before {
   margin: auto;
   /*width: 1000px;
   height: 1000px;*/
-  max-width: 700px;
-  max-height: 700px;
+  max-width: 500px;
+  max-height: 500px;
   padding: 10vh 0 0 0;
   position: relative; }
 
@@ -107,11 +107,11 @@ input[type=checkbox]:checked + label:before {
     position: absolute;
 
     left  : 500px;*/
-    width : 700px;
-    height: 700px;
+    width : 500px;
+    height: 500px;
 
-    max-width: 700px;
-    max-height: 700px;
+    max-width: 500px;
+    max-height: 500px;
     /*transform: translate(-50%, -50%);*/
 
 
