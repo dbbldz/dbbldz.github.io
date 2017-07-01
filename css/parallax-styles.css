@@ -13,7 +13,7 @@ img {
   display: block;
   border: 2px solid black;
   box-shadow: 11px 9px 41px 0px rgba(0,0,0,0.75);
-  margin: 75px 0 0 75px;
+  margin: 125px 0 0 125px;
   /*padding-left: 50px;
 padding-top: 50px;*/
 }
@@ -104,7 +104,7 @@ input[type=checkbox]:checked + label:before {
 
   .colorbars {
     position: absolute;
-    margin: 50px 0 0 50px;
+    margin: 100px 0 0 100px;
     width : 500px;
     height: 500px;
 
@@ -146,7 +146,7 @@ input[type=checkbox]:checked + label:before {
 .colorbars2 {
   position: absolute;
 
-  margin: 25px 0 0 25px;
+  margin: 75px 0 0 75px;
 
   width : 550px;
   height: 550px;
@@ -187,10 +187,10 @@ input[type=checkbox]:checked + label:before {
 }
 
 .colorbars3 {
-  /*margin:auto;
   position: absolute;
 
-  left  : 500px;*/
+  margin: 50px 0 0 50px;
+
   width : 600px;
   height: 600px;
 
@@ -229,6 +229,89 @@ input[type=checkbox]:checked + label:before {
     100%{background-position:0% 50%}
 }
 
+.colorbars4 {
+  position: absolute;
+
+  margin: 25px 0 0 25px;
+
+  width : 650px;
+  height: 650px;
+
+  max-width: 650px;
+  max-height: 650px;
+  /*transform: translate(-50%, -50%);*/
+
+
+  /*border: 4px solid black;*/
+  background: linear-gradient(270deg, rgba(255,245,0,0.5), rgba(255,144,0,0.5), rgba(255,6,6, 0.5), rgba(0,190,255,0.5), rgba(0,255,39,0.5));
+
+  background-size: 1000% 1000%;
+
+  -webkit-animation: colorbars4ani 45s linear infinite;
+  -moz-animation: colorbars4ani 45s linear infinite;
+  animation: colorbars4ani 45s linear infinite;
+
+  -webkit-box-shadow: 11px 9px 41px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 11px 9px 41px 0px rgba(0,0,0,0.75);
+  box-shadow: 11px 9px 41px 0px rgba(0,0,0,0.75);
+}
+
+@-webkit-keyframes colorbars4ani {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes colorbars4ani {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes colorbars4ani {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.colorbars5 {
+  position: absolute;
+  width : 700px;
+  height: 700px;
+
+  max-width: 700px;
+  max-height: 700px;
+  /*transform: translate(-50%, -50%);*/
+
+
+  /*border: 4px solid black;*/
+  background: linear-gradient(270deg, rgba(0,255,39,0.5), rgba(255,245,0,0.5), rgba(255,144,0,0.5), rgba(255,6,6, 0.5), rgba(0,190,255,0.5));
+
+  background-size: 1000% 1000%;
+
+  -webkit-animation: colorbars5ani 45s linear infinite;
+  -moz-animation: colorbars5ani 45s linear infinite;
+  animation: colorbars5ani 45s linear infinite;
+
+  -webkit-box-shadow: 11px 9px 41px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 11px 9px 41px 0px rgba(0,0,0,0.75);
+  box-shadow: 11px 9px 41px 0px rgba(0,0,0,0.75);
+}
+
+@-webkit-keyframes colorbars5ani {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes colorbars5ani {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes colorbars5ani {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
 .layer:nth-child(1) {
   opacity: .5; }
   .layer:nth-child(1) button {
@@ -237,35 +320,35 @@ input[type=checkbox]:checked + label:before {
             transform: rotate(150deg); }
 
 .layer:nth-child(2) {
-  opacity: .7; }
+  opacity: .6; }
   .layer:nth-child(2) button {
     -webkit-transform: rotate(120deg);
         -ms-transform: rotate(120deg);
             transform: rotate(120deg); }
 
 .layer:nth-child(3) {
-  opacity: 1; }
+  opacity: .7; }
   .layer:nth-child(3) button {
     -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
             transform: rotate(90deg); }
 
 .layer:nth-child(4) {
-  opacity: 1; }
+  opacity: .8; }
   .layer:nth-child(4) button {
     -webkit-transform: rotate(60deg);
         -ms-transform: rotate(60deg);
             transform: rotate(60deg); }
 
 .layer:nth-child(5) {
-  opacity: 0.75; }
+  opacity: 0.9; }
   .layer:nth-child(5) button {
     -webkit-transform: rotate(30deg);
         -ms-transform: rotate(30deg);
             transform: rotate(30deg); }
 
 .layer:nth-child(6) {
-  opacity: 0.9; }
+  opacity: 1; }
   .layer:nth-child(6) button {
     -webkit-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
