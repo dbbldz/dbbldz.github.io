@@ -63,7 +63,7 @@ input[type=checkbox]:checked + label:before {
   margin: auto;
   /*width: 1000px;
   height: 1000px;*/
-  max-width: 600px;
+  /*max-width: 600px;*/
   /*padding: 10px;*/
   position: relative; }
 
@@ -92,16 +92,23 @@ input[type=checkbox]:checked + label:before {
 .aspect {
   opacity: 0.2; }
 
+.bgimg {
+  background-size:cover;
+  background-repeat: repeat;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
   .colorbars {
     /*margin:auto;
-    position: absolute;
+    position: absolute;*/
 
-    left  : 500px;*/
+    /*left  : 500px;*/
     width : 700px;
     height: 700px;
-
+/*
     max-width: 700px;
-    max-height: 700px;
+    max-height: 700px;*/
     /*transform: translate(-50%, -50%);*/
 
 
@@ -150,7 +157,7 @@ input[type=checkbox]:checked + label:before {
             transform: rotate(120deg); }
 
 .layer:nth-child(3) {
-  opacity: 0.45; }
+  opacity: 1; }
   .layer:nth-child(3) button {
     -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);

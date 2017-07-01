@@ -14,8 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="css/parallax-styles.css"/>
 
 </head>
-<body>
-
+<body class="bgimg">
 	<div id="container" class="container">
 		<div id="scene"
 		data-relative-input="true"
@@ -39,7 +38,7 @@
 
 					class="scene">
 
-			<div class="layer" data-depth="0.80"><div class="colorbars"></div></div>
+			<div class="layer" data-depth="0.50"><div class="colorbars"></div></div>
 		  <div class="layer" data-depth="1.00"><img src="css/images/RET001.jpg"></div></div>
 			<!-- <div class="layer" data-depth="0.60"><img src="images/layer3.png"></div>
 			<div class="layer" data-depth="0.40"><img src="images/layer4.png"></div>
@@ -49,7 +48,28 @@
 	</div>
 
 	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Background Switcher -->
+	<script>
+	$(document).ready(function(){
+
+	$(".bgimg").bgswitcher({
+	  images: ["css/images/cropped-red-lores.jpg", "css/images/cropped-orange-lores.jpg", "css/images/cropped-yellow-lores.jpg", "css/images/cropped-green-lores.jpg", "css/images/cropped-blue-lores.jpg"],
+	  effect: "fade",
+	  interval: 4000,
+	  loop: true,
+	  shuffle: false,
+	  duration: 4000,
+	  easing: "swing"
+	});
+	});
+	</script>
+	<!-- Background Switcher -->
+	<script src="js/bgswitcher.js"></script>
 	<script src="js/parallax.js"></script>
+
+<!-- Parallax -->
+
 	<script>
 
 	// Pretty simple huh?
