@@ -65,7 +65,7 @@ input[type=checkbox]:checked + label:before {
   height: 1000px;*/
   max-width: 700px;
   max-height: 700px;
-  padding: 25vh 0 0 0;
+  padding: 10vh 0 0 0;
   position: relative; }
 
 .container--offset {
@@ -312,35 +312,35 @@ input[type=checkbox]:checked + label:before {
 }
 
 .layer:nth-child(1) {
-  opacity: .5; }
+  opacity: .25; }
   .layer:nth-child(1) button {
     -webkit-transform: rotate(150deg);
         -ms-transform: rotate(150deg);
             transform: rotate(150deg); }
 
 .layer:nth-child(2) {
-  opacity: .6; }
+  opacity: .40; }
   .layer:nth-child(2) button {
     -webkit-transform: rotate(120deg);
         -ms-transform: rotate(120deg);
             transform: rotate(120deg); }
 
 .layer:nth-child(3) {
-  opacity: .7; }
+  opacity: .55; }
   .layer:nth-child(3) button {
     -webkit-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
             transform: rotate(90deg); }
 
 .layer:nth-child(4) {
-  opacity: .8; }
+  opacity: .7; }
   .layer:nth-child(4) button {
     -webkit-transform: rotate(60deg);
         -ms-transform: rotate(60deg);
             transform: rotate(60deg); }
 
 .layer:nth-child(5) {
-  opacity: 0.9; }
+  opacity: 0.85; }
   .layer:nth-child(5) button {
     -webkit-transform: rotate(30deg);
         -ms-transform: rotate(30deg);
