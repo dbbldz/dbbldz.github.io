@@ -113,7 +113,7 @@ input[type=checkbox]:checked + label:before {
     /*transform: translate(-50%, -50%);*/
 
 
-    /*border: 4px solid black;*/
+    border: 4px solid black;
     background: linear-gradient(270deg, rgba(0,190,255,0.5), rgba(0,255,39,0.5), rgba(255,245,0,0.5), rgba(255,144,0,0.5), rgba(255,6,6, 0.5));
 
     background-size: 1000% 1000%;
@@ -143,7 +143,7 @@ input[type=checkbox]:checked + label:before {
       100%{background-position:0% 50%}
 }
 
-.colorbars2 {
+/*.colorbars2 {
   position: absolute;
 
   margin: 75px 0 0 75px;
@@ -293,7 +293,7 @@ input[type=checkbox]:checked + label:before {
   -webkit-box-shadow: 11px 9px 41px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 11px 9px 41px 0px rgba(0,0,0,0.75);
   box-shadow: 11px 9px 41px 0px rgba(0,0,0,0.75);
-}
+}*/
 
 @-webkit-keyframes colorbars5ani {
     0%{background-position:0% 50%}
@@ -312,14 +312,14 @@ input[type=checkbox]:checked + label:before {
 }
 
 .layer:nth-child(1) {
-  opacity: .25; }
+  opacity: 1; }
   .layer:nth-child(1) button {
     -webkit-transform: rotate(150deg);
         -ms-transform: rotate(150deg);
             transform: rotate(150deg); }
 
 .layer:nth-child(2) {
-  opacity: .40; }
+  opacity: 1; }
   .layer:nth-child(2) button {
     -webkit-transform: rotate(120deg);
         -ms-transform: rotate(120deg);
