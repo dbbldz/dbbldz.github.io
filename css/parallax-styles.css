@@ -273,7 +273,6 @@ input[type=checkbox]:checked + label:before {
 }
 
 .colorbars5 {
-  position: absolute;
   width : 700px;
   height: 700px;
 
