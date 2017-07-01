@@ -1,63 +1,55 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="css/styles.css">
-  </head>
-<body class="bgimg">
-  <div id="container" class="container">
-    <div id="scene" class="scene">
-    <div class="layer">
-    <div class="barbox">
-      <div class="colorbars">
-        <a href=""> <img class="coverart" src="css/images/RET001.jpg"/></a>
+<head>
 
-      </div>
-    </div>
-    </div>
-  </div>
-</div>
+	<meta charset="utf-8">
 
-<pre class="output"></pre>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<title>Parallax.js | Simple Example</title>
 
-<!-- Background Switcher -->
-<script src="js/bgswitcher.js"></script>
+	<!-- Behavioral Meta Data -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<!-- Device Orientation Script -->
-<!-- <script type="text/javascript">
-$(document).ready(function(){
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="css/parallax-styles.css"/>
 
-var colorbars = document.querySelector('.colorbars');
-var barbox = document.querySelector('.barbox');
-var output = document.querySelector('.output');
-var maxX = barbox.clientWidth  - colorbars.clientWidth;
-var maxY = barbox.clientHeight - colorbars.clientHeight;
+</head>
+<body>
 
+	<div id="container" class="container">
+		<div id="scene"
+		data-relative-input="true"
+		data-clip-relative-input="false"
+		data-hover-only="true"
+		data-input-element="#myinput"
+		data-calibrate-x="true"
+		data-calibrate-y="true"
+		data-invert-x="false"
+		data-invert-y="false"
+		data-limit-x="false"
+		data-limit-y="100"
+		data-scalar-x="10"
+		data-scalar-y="10"
+		data-friction-x="0.2"
+		data-friction-y="0.8"
+		data-origin-x="0.5"
+		data-origin-y="0.5"
+		data-precision="1"
+		data-pointer-events="true"
 
-  window.addEventListener('deviceorientation', function handleOrientation(event) {
+					class="scene">
+			<div class="layer" data-depth="0.80">
 
-  var x = event.beta;
-  var y = event.gamma;
+			<div class="layer" data-depth="1.00"><div class="colorbars"><img src="css/images/RET001.jpg"></div></div>
+			<!-- <div class="layer" data-depth="0.60"><img src="images/layer3.png"></div>
+			<div class="layer" data-depth="0.40"><img src="images/layer4.png"></div>
+			<div class="layer" data-depth="0.20"><img src="images/layer5.png"></div>
+			<div class="layer" data-depth="0.00"><img src="images/layer6.png"></div> -->
+		</div>
+	</div>
 
-  output.innerHTML  = "beta : " + x + "\n";
-  output.innerHTML += "gamma: " + y + "\n";
-
-  if (x >  90) { x =  90};
-  if (x < -90) { x = -90};
-
-
-  x += 90;
-  y += 90;
-
-  colorbars.style.top  = (maxX*x/180 - 10) + "px";
-  colorbars.style.left = (maxY*y/180 - 10) + "px";
-
-});
-});
-</script> -->
-
-<script src="js/parallax.js"></script>
+	<!-- Scripts -->
+	<script src="js/parallax.js"></script>
 	<script>
 
 	// Pretty simple huh?
@@ -66,20 +58,5 @@ var maxY = barbox.clientHeight - colorbars.clientHeight;
 
 	</script>
 
-<!-- Background Switcher -->
-<script>
-$(document).ready(function(){
-
-$(".bgimg").bgswitcher({
-  images: ["css/images/cropped-red-lores.jpg", "css/images/cropped-orange-lores.jpg", "css/images/cropped-yellow-lores.jpg", "css/images/cropped-green-lores.jpg", "css/images/cropped-blue-lores.jpg"],
-  effect: "fade",
-  interval: 4000,
-  loop: true,
-  shuffle: false,
-  duration: 4000,
-  easing: "swing"
-});
-});
-</script>
 </body>
 </html>
