@@ -1,86 +1,90 @@
-<!DOCTYPE html>
 <html>
-<head>
-
-	<meta charset="utf-8">
-
-	<title>Rare Earth Riddims</title>
-
-	<!-- Behavioral Meta Data -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="css/parallax-styles.css"/>
-
-</head>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
 <body class="bgimg">
+    <div class="barbox">
+      <div class="colorbars">
+        <a href=""> <img class="coverart" src="css/images/RET001.jpg"/></a>
+      </div>
+  </div>
 
-	<div id="container" class="container">
-		<div id="scene"
-		data-relative-input="true"
-		data-clip-relative-input="false"
-		data-hover-only="true"
-		data-input-element="#myinput"
-		data-calibrate-x="true"
-		data-calibrate-y="true"
-		data-invert-x="false"
-		data-invert-y="false"
-		data-limit-x="true"
-		data-limit-y="true"
-		data-scalar-x="10"
-		data-scalar-y="10"
-		data-friction-x="0.8"
-		data-friction-y="0.8"
-		data-origin-x="0.5"
-		data-origin-y="0.5"
-		data-precision="1"
-		data-pointer-events="true"
+<pre class="output"></pre>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-					class="scene">
-			<!-- <div class="layer" data-depth="0.75"><div class="colorbars5"></div></div>
-			<div class="layer" data-depth="0.80"><div class="colorbars4"></div></div>
-			<div class="layer" data-depth="0.85"><div class="colorbars3"></div></div>
-			<div class="layer" data-depth="0.90"><div class="colorbars2"></div></div> -->
-			<div class="layer" data-depth="0.95"><div class="colorbars"></div></div>
-		  <div class="layer" data-depth="1.00"><img src="css/images/RET001.jpg"></div></div>
-			<!-- <div class="layer" data-depth="0.60"><img src="images/layer3.png"></div>
-			<div class="layer" data-depth="0.40"><img src="images/layer4.png"></div>
-			<div class="layer" data-depth="0.20"><img src="images/layer5.png"></div>
-			<div class="layer" data-depth="0.00"><img src="images/layer6.png"></div> -->
-		</div>
-	</div>
+<!-- Background Switcher -->
+<script src="js/bgswitcher.js"></script>
 
-	<!-- Scripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- Background Switcher -->
-	<script>
-	$(document).ready(function(){
+<!-- Device Orientation Script -->
+<script type="text/javascript">
+$(document).ready(function(){
 
-	$(".bgimg").bgswitcher({
-	  images: ["css/images/cropped-red-lores.jpg", "css/images/cropped-orange-lores.jpg", "css/images/cropped-yellow-lores.jpg", "css/images/cropped-green-lores.jpg", "css/images/cropped-blue-lores.jpg"],
-	  effect: "fade",
-	  interval: 4000,
-	  loop: true,
-	  shuffle: false,
-	  duration: 4000,
-	  easing: "swing"
-	});
-	});
-	</script>
-	<!-- Background Switcher -->
-	<script src="js/bgswitcher.js"></script>
-	<script src="js/parallax.js"></script>
+var colorbars = document.querySelector('.colorbars');
+var barbox = document.querySelector('.barbox');
+var output = document.querySelector('.output');
 
-<!-- Parallax -->
+var initialTop = colorbars.offsetTop;
+console.log('initial top', initialTop);
 
-	<script>
+// 3% of screen width
+var maxPositionChange = Math.floor(window.innerWidth * 0.03);
 
-	// Pretty simple huh?
-	var scene = document.getElementById('scene');
-	var parallax = new Parallax(scene);
+var initialGamma = null;
+var initialBeta = null;
 
-	</script>
+  window.addEventListener('deviceorientation', function handleOrientation(event) {
 
+  // we can only get gamma/beta from this call the `deviceorientation` event
+  if ((initialGamma === null && event.gamma !== null) &&
+    (initialBeta === null && event.beta !== null)) {
+      initialGamma = event.gamma;
+      initialBeta = event.beta;
+      console.log('initialGamma', initialGamma);
+      console.log('initialBeta', initialBeta);
+  }
+  console.log('b', event.beta);
+  console.log('g', event.gamma);
+
+  var x = event.beta;
+  var y = event.gamma;
+
+  var xDelta = initialBeta - event.beta;
+  console.log('xdelta', xDelta);
+
+  output.innerHTML  = "beta : " + x + "\n";
+  output.innerHTML += "gamma: " + y + "\n";
+
+  // handling just portrait mode at the moment - holding device as if you were
+  // a picture in portrait mode - doesn't handle device flat on a table yet
+  //
+  // xDelta / 90 calculates how many % off the initialGamma value the current
+  // gamma is (gives a value [0;1])
+  // once we have the percentage we multiply it by the max allowed x position
+  // change
+  var positionXMove = maxPositionChange * (xDelta / 90);
+  var newPositionX = initialTop + positionXMove;
+  console.log('xmove', positionXMove);
+  console.log('new pos', newPositionX);
+  colorbars.style.top  = newPositionX + "px";
+  });
+});
+</script>
+
+<!-- Background Switcher -->
+<script>
+$(document).ready(function(){
+
+$(".bgimg").bgswitcher({
+  images: ["css/images/cropped-red-lores.jpg", "css/images/cropped-orange-lores.jpg", "css/images/cropped-yellow-lores.jpg", "css/images/cropped-green-lores.jpg", "css/images/cropped-blue-lores.jpg"],
+  effect: "fade",
+  interval: 4000,
+  loop: true,
+  shuffle: false,
+  duration: 4000,
+  easing: "swing"
+});
+});
+</script>
 </body>
 </html>
