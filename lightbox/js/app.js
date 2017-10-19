@@ -23,6 +23,9 @@ $("img").click(function(e){
       "top":"50%",
       "left":"50%",
       "transform":"rotate(360deg) translate(-50%, -50%)",
+      "-webkit-transform":"rotate(360deg) translate(-50%, -50%)",
+      "-moz-transform":"rotate(360deg) translate(-50%, -50%)"
+
     });
   // parses event object width property so we can calculate the correct height (3:2 ratio)
       imgWidth = parseInt($(this).css("width"));
@@ -77,7 +80,9 @@ $("img").click(function(e){
         "height":"200px",
         "margin":"10px",
         "left":"0",
-        "transform":"rotate(-360deg)  translate(0)"
+        "transform":"rotate(-360deg)  translate(0)",
+        "-webkit-transform":"rotate(-360deg)  translate(0)",
+        "-moz-transform":"rotate(-360deg)  translate(0)"
       });
       //removes the button
       $(this).remove();
