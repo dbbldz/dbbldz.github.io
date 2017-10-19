@@ -1,86 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="css/player.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
 
-	<meta charset="utf-8">
-
-	<title>Rare Earth Riddims</title>
-
-	<!-- Behavioral Meta Data -->
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="css/parallax-styles.css"/>
+  <script src="js/prefixfree.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
-<body class="bgimg">
+<body>
+  <div class="main-container">
+    <div class="container">
+      <img src="img/RET.png">
+      <div id="tridiv">
+        <div class="scene" style="-webkit-transform:rotateX(-380deg) rotateY(-36deg); -moz-transform:rotateX(-380deg) rotateY(-36deg); -ms-transform:rotateX(-380deg) rotateY(-36deg); transform:rotateX(-380deg) rotateY(-36deg); ">
+          <div class="shape pyramid-1 pyr-1">
+            <div class="face-wrapper ft">
+              <div class="face">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.2);"></div>
+              </div>
+            </div>
+            <div class="face-wrapper bk">
+              <div class="face">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.176);"></div>
+              </div>
+            </div>
+            <div class="face-wrapper lt">
+              <div class="face">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.176);"></div>
+              </div>
+            </div>
+            <div class="face-wrapper rt">
+              <div class="face">
+                <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.176);"></div>
+              </div>
+            </div>
+            <div class="face bm">
+              <div class="photon-shader" style="background-color: rgba(255, 255, 255, 0.176);"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="audio-slides">
 
-	<div id="container" class="container">
-		<div id="scene"
-		data-relative-input="true"
-		data-clip-relative-input="false"
-		data-hover-only="true"
-		data-input-element="#myinput"
-		data-calibrate-x="true"
-		data-calibrate-y="true"
-		data-invert-x="false"
-		data-invert-y="false"
-		data-limit-x="true"
-		data-limit-y="true"
-		data-scalar-x="10"
-		data-scalar-y="10"
-		data-friction-x="1"
-		data-friction-y="1"
-		data-origin-x="0.5"
-		data-origin-y="0.5"
-		data-precision="1"
-		data-pointer-events="true"
+      <div>
+        <!-- <button id="pButton" class="play"></button> -->
+        <div class="track-id"><span>FULL BREAK</span></div>
+        <audio id="music" preload="true">
+          <source src="audio/full-break.mp3">
+        </audio>
+        <div id="audioplayer">
+          <div id="timeline">
+          <div id="playhead"></div>
+          </div>
+        </div>
+      </div>
 
-					class="scene">
-			<!-- <div class="layer" data-depth="0.75"><div class="colorbars5"></div></div>
-			<div class="layer" data-depth="0.80"><div class="colorbars4"></div></div>
-			<div class="layer" data-depth="0.85"><div class="colorbars3"></div></div>
-			<div class="layer" data-depth="0.90"><div class="colorbars2"></div></div> -->
-			<div class="layer" data-depth="0.95"><div class="colorbars"></div></div>
-		  <div class="layer" data-depth="1.00"><img src="css/images/RET001.jpg"></div></div>
-			<!-- <div class="layer" data-depth="0.60"><img src="images/layer3.png"></div>
-			<div class="layer" data-depth="0.40"><img src="images/layer4.png"></div>
-			<div class="layer" data-depth="0.20"><img src="images/layer5.png"></div>
-			<div class="layer" data-depth="0.00"><img src="images/layer6.png"></div> -->
-		</div>
-	</div>
+      <div>
+        <!-- <button id="pButton" class="play"></button> -->
+        <div class="track-id"><span>SCHOOL DAYS</span></div>
+        <audio id="music" preload="true">
+          <source src="audio/school-days.mp3">
+        </audio>
+        <div id="audioplayer">
+          <div id="timeline">
+          <div id="playhead"></div>
+          </div>
+        </div>
+      </div>
 
-	<!-- Scripts -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!-- Background Switcher -->
-	<script>
-	$(document).ready(function(){
+    </div>
+  </div> <!--main-container end-->
 
-	$(".bgimg").bgswitcher({
-	  images: ["css/images/cropped-red-lores.jpg", "css/images/cropped-orange-lores.jpg", "css/images/cropped-yellow-lores.jpg", "css/images/cropped-green-lores.jpg", "css/images/cropped-blue-lores.jpg"],
-	  effect: "fade",
-	  interval: 4000,
-	  loop: true,
-	  shuffle: false,
-	  duration: 4000,
-	  easing: "swing"
-	});
-	});
-	</script>
-	<!-- Background Switcher -->
-	<script src="js/bgswitcher.js"></script>
-	<script src="js/parallax.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/audiocontrols.js"></script>
+<script src="js/orient.js"></script>
+<script src="slick/slick.js"></script>
+<script>
+$(document).ready(function(){
+$('.audio-slides').slick({
+});
+});
 
-<!-- Parallax -->
-
-	<script>
-
-	// Pretty simple huh?
-	var scene = document.getElementById('scene');
-	var parallax = new Parallax(scene);
-
-	</script>
-
+</script>
 </body>
 </html>

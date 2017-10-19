@@ -1,0 +1,259 @@
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:700i');
+
+@font-face {
+font-family: 'Romic-Medium';
+src: url('fonts/Romic-Medium.ttf') format('truetype');
+}
+html{
+  margin: 0 0;
+  width: 100%;
+
+}
+body{
+margin:0 0;
+padding: 0 0;
+background-color: #ffffef;
+text-align: center;
+}
+
+#pButton{
+    width: 30px;
+    height:30px;
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    border: none;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    float:left;
+    outline:none;
+    padding: 0 auto;
+}
+
+.play{background: url('../img/play.png') ;}
+.pause{background: url('../img/pause.png') ;}
+
+#timeline{
+	width: 100%;
+	height: 55px;
+  padding-left: 5px;
+
+	float: left;
+  /*border: solid black 2px;*/
+  background: linear-gradient(270deg, #16fabf, #16d4fa, #f416fa, #f06d6d, #f0d46d, #def06d);
+  background-size: 1200% 1200%;
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
+}
+#playhead{
+	width: 10px;
+	height: 5em;
+	background: rgba(255, 255, 255,.6);
+}
+.track-id{
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 4px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.container {
+  margin-top: 5%;
+  height: 70vh;
+  background-image: url('../img/black-marble-blur.jpg');
+  background-size: cover;
+  background-position: 0px -600px;
+  text-align: center;
+  box-shadow: inset 0px 0px 19px 8px rgba(49, 50, 50, 0.9);
+}
+img {
+  width: 10em;
+  margin-top: 10%;
+  z-index: 9;
+}
+.main-container {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+#tridiv {
+  bottom: 0;
+  left:0;
+  overflow: hidden;
+  perspective: 800px;
+  position: absolute;
+  right:0;
+  left:0;
+  top:150px;
+  /*width: 80%;
+  height: 40%;*/
+  background: transparent;
+  font-size: 150%;
+  height:300px;
+}
+.scene, .shape, .face, .face-wrapper, .cr {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.scene {
+  /*width: 80em;
+  height: 80em;
+  top: 25%;
+  left: 40%;
+  margin: -37em 0 0 -31em;*/
+
+  height: 512px;
+  left: 50%;
+  margin-left: -256px;
+  margin-top: -256px;
+  top: 50%;
+  width: 512px;
+}
+.shape {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 50%;
+}
+.face, .face-wrapper {
+  overflow: hidden;
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+  /* hidden by default, prevent blinking and other weird rendering glitchs */
+}
+.face {
+  background-size: 100% 100%!important;
+  background-position: center;
+}
+.face-wrapper .face {
+  left: 100%;
+  width: 100%;
+  height: 100%
+}
+.photon-shader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+.side {
+  left: 50%;
+}
+.cr, .cr .side {
+  height: 100%;
+}
+[class*="pyramid"] .face-wrapper .face {
+  transform: rotateZ(45deg) translateX(-35.35%) translateY(35.35%);
+}
+[class*="pyramid"] .bk {
+  left: 100%;
+}
+[class*="pyramid"] .bm {
+  top: 100%;
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="pyramid"] .rt, [class*="pyramid"] .lt {
+  transform-origin: 50% 0;
+}
+/* .pyr-1 styles */
+.pyr-1 {
+  transform:translate3D(4em, -4em, 4em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:6em;
+  height:5em;
+  margin:-2.5em 0 0 -3em;
+}
+.pyr-1 .face-wrapper {
+  width:6em;
+  height:3em;
+}
+.pyr-1 .face-wrapper .face {
+  width:6em;
+  height:6em;
+}
+.pyr-1 .ft {
+  transform:scaleZ(1.9436506316151003) scaleY(1.9436506316151003) rotateX(30.963756532073536deg);
+}
+.pyr-1 .bk {
+  transform:scaleZ(1.9436506316151003) scaleY(1.9436506316151003) rotateX(-30.963756532073536deg) rotateY(180deg);
+}
+.pyr-1 .rt {
+  transform:scaleX(1.9436506316151003) scaleY(1.9436506316151003) rotateZ(30.963756532073536deg) rotateY(-90deg);
+}
+.pyr-1 .lt {
+  transform:scaleX(1.9436506316151003) scaleY(1.9436506316151003) rotateZ(-30.963756532073536deg) rotateY(90deg);
+}
+.pyr-1 .bm {
+  width:6em;
+  height:6em;
+}
+.pyr-1 .face {
+  background:url(https://farm3.staticflickr.com/2645/3952016206_e4e6be3e79_b.jpg) #FFFFFF;
+}
+
+@media only screen and (min-width: 500px) and (max-width: 800px) {
+  img {
+    width: 20em;
+    margin-top: 10%;
+  }
+  .container {
+    background-position: 0px -900px;
+  }
+  #timeline{
+  	width: 100%;
+  }
+  .track-id{
+    font-size: 37px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  #tridiv{
+  font-size: 220%;
+  top:300px;
+  height: 400px;
+ }
+ #pButton{
+   width:37px;
+   height:37px;
+   margin-top: 25px;
+}
+}
+
+@media only screen and (min-width: 800px) {
+  img {
+    width: 15em;
+    margin-top: 10%;
+  }
+  #timeline{
+  	width: 90%;
+  }
+  .track-id{
+    font-size: 35px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
