@@ -1,7 +1,6 @@
 // This is a simple lightbox program I made using jQuery
 
 var test=1;
-var counter=0;
 
 $("img").on("click", function(){
   // entire block wrapped in condition to prevent user from clicking on another image while the lightbox focuses on the "current image" since test value goes to 0 when any single image is clicked and is incremented back to 1 when the user clicks the 'esc' button
@@ -62,13 +61,15 @@ $("img").on("click", function(){
 
   //Start Button Click Funtion - everything from here on revert img back to it's original position and delete the 'X' button
     //clicking the button
-    $("button").on("click",(function(){
+    $("button, .lightbox-bg").on("click",(function(){
+  //increments tester so we can click a new image and run this code again will not increment if test is higher that one to avoid accidentally breaking the app with higher variables
+      if (test<1){test++}else{};
       //removes the black placeholder list item
       $("li.blank-li").remove();
       //turns off the dimmer
       $(".lightbox-bg").css("visibility","hidden");
       //restores original styling to the image (maybe an easier way to do this?)
-      $(this).next().css({
+      $("button").next().css({
         "position": "relative",
         "z-index":"0",
         "width":"300px",
@@ -78,16 +79,10 @@ $("img").on("click", function(){
         "transform":"rotate(-360deg)  translate(0)",
       });
       //removes the button
-      $(this).remove();
+      $("button").remove();
       //removes the current-image class since having an addClass left on an image confuses our program about which element we want it to update on window resize and breaks that functionality
       $("img").removeClass("current-image");
-      //increments tester so we can click a new image and run this code again
-      test++;
-      counter++;
-      if (counter>9){
-        alert("OK calm down it's not THAT fucking fun");
-        counter-=10;
-      }
+
     }));
   }
   else {
