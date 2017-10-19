@@ -63,7 +63,8 @@ $("img").on("click touchstart",(function(){
 
   //Start Button Click Funtion - everything from here on revert img back to it's original position and delete the 'X' button
     //clicking the button
-    $("button").on("click touchstart",(function(){
+    $("button").on("click touchstart",(function(e){
+      e.preventDefault();
       //removes the black placeholder list item
       $("li.blank-li").remove();
       //turns off the dimmer
