@@ -1,11 +1,9 @@
 // This is a simple lightbox program I made using jQuery
 
-let test=1;
-let counter=0;
-let windowWidth = $(window).width();
+var test=1;
+var counter=0;
 
-$("img").click(function(e){
-  e.preventDefault();
+$("img").on("click", function(){
   // entire block wrapped in condition to prevent user from clicking on another image while the lightbox focuses on the "current image" since test value goes to 0 when any single image is clicked and is incremented back to 1 when the user clicks the 'esc' button
 
   if (test===1){
@@ -22,10 +20,7 @@ $("img").click(function(e){
   // % positioning combined with translate offset = perfect centering
       "top":"50%",
       "left":"50%",
-      "transform":"rotate(360deg) translate(-50%, -50%)",
-      "-webkit-transform":"rotate(360deg) translate(-50%, -50%)",
-      "-moz-transform":"rotate(360deg) translate(-50%, -50%)"
-
+      "transform":"rotate(360deg) translate(-50%, -50%)"
     });
   // parses event object width property so we can calculate the correct height (3:2 ratio)
       imgWidth = parseInt($(this).css("width"));
@@ -67,7 +62,7 @@ $("img").click(function(e){
 
   //Start Button Click Funtion - everything from here on revert img back to it's original position and delete the 'X' button
     //clicking the button
-    $("button").click(function(){
+    $("button").on("click",(function(){
       //removes the black placeholder list item
       $("li.blank-li").remove();
       //turns off the dimmer
@@ -81,8 +76,6 @@ $("img").click(function(e){
         "margin":"10px",
         "left":"0",
         "transform":"rotate(-360deg)  translate(0)",
-        "-webkit-transform":"rotate(-360deg)  translate(0)",
-        "-moz-transform":"rotate(-360deg)  translate(0)"
       });
       //removes the button
       $(this).remove();
@@ -95,7 +88,7 @@ $("img").click(function(e){
         alert("OK calm down it's not THAT fucking fun");
         counter-=10;
       }
-    });
+    }));
   }
   else {
   }

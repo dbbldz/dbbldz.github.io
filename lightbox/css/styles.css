@@ -20,11 +20,7 @@ img{
   margin: 10px;
   border: ridge white 5px;
   box-shadow: 3px 3px 5px black;
-  -webkit-box-shadow: 3px 3px 5px black;
-  -moz-box-shadow: 3px 3px 5px black;
   transition: transform .5s;
-  -webkit-transition: transform .5s;
-  -moz-transition: transform .5s;
 }
 
 .lightbox-bg{
@@ -33,6 +29,7 @@ img{
   height:100%;
   background-color: rgba(0,0,0,0.5);
   z-index:1;
+  visibility: hidden;
 }
 button{
   z-index: 3;
@@ -48,9 +45,6 @@ button{
   line-height: 0;
   opacity:0;
   transition: opacity 3s, color 8s;
-  -webkit-transition: opacity 3s, color 8s;
-  -moz-transition: opacity 3s, color 8s;
-
   text-shadow: 2px 2px #000;
 }
 .blank-li{
