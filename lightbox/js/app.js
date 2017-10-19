@@ -4,7 +4,8 @@ let test=1;
 let counter=0;
 let windowWidth = $(window).width();
 
-$("img").bind("click touchstart",(function(){
+$("img").click(function(e){
+  e.preventDefault();
   // entire block wrapped in condition to prevent user from clicking on another image while the lightbox focuses on the "current image" since test value goes to 0 when any single image is clicked and is incremented back to 1 when the user clicks the 'esc' button
 
   if (test===1){
@@ -63,8 +64,7 @@ $("img").bind("click touchstart",(function(){
 
   //Start Button Click Funtion - everything from here on revert img back to it's original position and delete the 'X' button
     //clicking the button
-    $("button").bind("click touchstart",(function(e){
-      e.preventDefault();
+    $("button").click(function(){
       //removes the black placeholder list item
       $("li.blank-li").remove();
       //turns off the dimmer
@@ -90,8 +90,8 @@ $("img").bind("click touchstart",(function(){
         alert("OK calm down it's not THAT fucking fun");
         counter-=10;
       }
-    }));
+    });
   }
   else {
   }
-}));
+});
