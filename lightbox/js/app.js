@@ -12,7 +12,7 @@ $("img").click(function(e){
     test--;
 
   // creates a new fixed element that takes up entire body and darkens content behind it
-    $(".lightbox-bg").css("display","inherit");
+    $(".lightbox-bg").css("visibility","visible");
   // targets event img and makes it a centered, fixed, element with a higher z-index than the dimmer panel
     $(this).css({
       "margin":"0",
@@ -71,7 +71,7 @@ $("img").click(function(e){
       //removes the black placeholder list item
       $("li.blank-li").remove();
       //turns off the dimmer
-      $(".lightbox-bg").css("display","none");
+      $(".lightbox-bg").css("visibility","hidden");
       //restores original styling to the image (maybe an easier way to do this?)
       $(this).next().css({
         "position": "relative",
