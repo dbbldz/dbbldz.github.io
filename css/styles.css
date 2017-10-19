@@ -18,7 +18,7 @@
 
 @font-face {
 font-family: 'Romic-Medium';
-src: url('fonts/Romic-Medium.ttf') format('truetype');
+src: url('/fonts/Romic-Medium.ttf') format('truetype');
 }
 *{}
 
@@ -48,8 +48,8 @@ text-align: center;
     padding: 0 auto;
 }
 
-.play{background: url('../img/play.png') ;}
-.pause{background: url('../img/pause.png') ;}
+.play{background: url('/img/play.png') ;}
+.pause{background: url('/img/pause.png') ;}
 
 #timeline{
 	width: 100%;
@@ -83,7 +83,7 @@ text-align: center;
 .container {
   margin-top: 5%;
   height: 70vh;
-  background-image: url('../img/black-marble-blur.jpg');
+  background-image: url('/img/black-marble-blur.jpg');
   background-size: cover;
   background-position: 0px -600px;
   text-align: center;
