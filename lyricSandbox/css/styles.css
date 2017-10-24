@@ -1,0 +1,123 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+body{
+  font-family: sans-serif;
+  text-align: center;
+  background-image:url('/img/sand_stone.jpg');
+  background-repeat: repeat;
+
+}
+
+.body-container{
+  margin-top: 0;
+  background-color: white;
+  height: 100%;
+}
+form{
+margin-left: 2%;
+margin-right: 2%;}
+input{
+  text-align: center;
+}
+input[type="text"]{
+  font-size:1.5em;
+  box-shadow: inset 1px 1px 1px rgba(0,0,0,0.2);
+  border: solid black 2px;
+  width:100%;
+  line-height: 1.1em;
+  padding:10px;
+  margin-top: 10px;
+  display:block;
+}
+
+
+#search{
+  display:block;
+  width:100%;
+   font-size: 1.5em;
+   font-weight: bold;
+   background-color: #F9C15B;
+   height:1.6em;
+}
+
+
+
+h1 {
+  font-weight: 800;
+  font-size: 2em;
+  padding-top: 0.1em;
+  font-family: 'Open Sans', sans-serif;
+
+}
+#currentWord {
+}
+h2{
+  padding:0.5em;
+}
+
+h3{
+  font-style: oblique;
+}
+.container{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: top;
+  flex-wrap: wrap;
+}
+.thesaurus-box, .rhyme-box{
+width: 100%;
+
+margin-left: 5%;
+margin-right:5%;
+/*background-color: grey;*/
+}
+#mySlider{
+  margin: 2em 0;
+}
+li{
+/*float:left;*/
+  list-style: none;
+  display:inline-block;
+  /*line-height: 2em;*/
+  padding: 0.5em;
+  margin: 0.5em;
+  font-family: 'Old Standard TT', serif;
+  font-size: 1.1em;
+  background-color: #FCF574;
+
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	border: 1px solid #ff471a !important;
+	background: #ff704d !important;
+	font-weight: normal;
+	color: #ffffff;
+}
+
+@media only screen and (min-width:576px) {
+  h1{
+    font-size: 4em;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  form{
+  margin-left: 20%;
+  margin-right: 20%;
+  }
+  input[type="text"]{
+    width:100%;
+  }
+  .body-container{
+    width:80%;
+    margin-left: 10%;
+  }
+}
